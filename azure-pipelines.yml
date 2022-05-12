@@ -24,4 +24,5 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     artifactName: 'demoapp'
-    pathToPublish: '$(build.artifactStagingDirectory)'
+    pathToPublish: '$(build.artifactStagingDirectory)/target'
+    publishLocation: 'Container'
