@@ -19,10 +19,10 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'clean install'
+    goals: 'package'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    artifactName: 'demoapp.jar'
-    pathToPublish: '$(system.defaultWorkingDirectory)/target'
+    artifactName: 'drop'
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
     publishLocation: 'Container'
